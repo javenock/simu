@@ -27,7 +27,6 @@ import com.simiyu.zblog.service.UserService;
 
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService{
 
 	@Autowired
