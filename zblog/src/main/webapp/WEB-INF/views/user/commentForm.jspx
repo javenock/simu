@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:spring="http://www.springframework.org/tags"
+xmlns:form="http://www.springframework.org/tags/form"
+xmlns:tiles="http://tiles.apache.org/tags-tiles"
+xmlns:sec="http://www.springframework.org/security/tags"  
+version="2.0">	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 	<jsp:output omit-xml-declaration = "true"/>	 
+	 		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+			 
+			<c:forEach items="${comment.LevelComments() }" var="com">
+			
+			${com.commentText}
+					
+			</c:forEach>
+			 
+			 
+		    	 </div>
+	
+	 

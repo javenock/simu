@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	 xmlns:c="http://java.sun.com/jsp/jstl/core"
+	 xmlns:security="http://www.springframework.org/security/tags"	
+	 xmlns:form="http://www.springframework.org/tags/form"
+	 xmlns:spring="http://www.springframework.org/tags"
+	 version="2.0">
+	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 <jsp:output omit-xml-declaration = "true"/>
+	 
+	 <head>
+		<spring:theme code="styleSheet" var="app_css" />
+		<spring:url value="/${app_css}" var="app_css_url" />
+		<link rel="stylesheet" type="text/css" media="screen" href="${app_css_url}" />
+	 </head>
+	 
+	 
+	 	<h1>
+			Hello world!  
+		</h1>
+		
+			<security:authorize access="hasRole('ROLE_ADMIN')">
+			<a href="${contextPath}/user/create/${post.id}?form">One</a>|
+                                <a href="${contextPath}/user/post/${post.id}/delete">Two</a>
+			
+			</security:authorize>
+		
+</div>

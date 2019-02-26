@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition extends="default" name="home">
+        <put-attribute name="body" value="/WEB-INF/views/user/home.jspx" />
+    </definition>
+    
+    <definition extends="default" name="log_in">
+        <put-attribute name="body" value="/WEB-INF/views/user/log_in.jspx" />
+    </definition>
+    <definition extends="default" name="logout">
+		<put-attribute name="body" value="/WEB-INF/views/user/logout.jspx" />
+	</definition>
+    <definition extends="default" name="hom">
+        <put-attribute name="body" value="/WEB-INF/views/user/hom.jspx" />
+    </definition>
+    
+    <definition extends="default" name="cake">
+        <put-attribute name="body" value="/WEB-INF/views/user/cake.jspx" />
+    </definition>
+    
+    <definition extends="default" name="registration">
+        <put-attribute name="body" value="/WEB-INF/views/user/registration.jspx" />
+    </definition>
+    
+    <definition extends="default" name="posts/create">
+        <put-attribute name="body" value="/WEB-INF/views/user/new_post.jspx" />
+    </definition>
+    
+    <definition extends="default" name="post_page">
+        <put-attribute name="body" value="/WEB-INF/views/user/posts_page.jspx" />
+    </definition>
+    
+    <definition extends="default" name="post/update">
+        <put-attribute name="body" value="/WEB-INF/views/user/new_post.jspx" />
+    </definition>
+    
+    <definition extends="default" name="post">
+        <put-attribute name="body" value="/WEB-INF/views/user/show_post.jspx" />
+    </definition>
+    
+    <definition extends="default" name="commentForm">
+        <put-attribute name="body" value="/WEB-INF/views/user/commentForm.jspx" />
+    </definition>
+    
+        
+</tiles-definitions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	 xmlns:c="http://java.sun.com/jsp/jstl/core"
+	 xmlns:form="http://www.springframework.org/tags/form"
+	 version="2.0">	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 <jsp:output omit-xml-declaration = "true"/>
+	 	
+		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+		<div class="container">
+   		<form style="display: none" action="${contextPath}/logout" id="logoutForm" method="post">
+  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		</form>
+
+		<script type="text/javascript">
+  			  $(document).ready(function() {
+     		   $('#logoutForm').submit();
+   			 });
+		</script>
+		
+		</div>
+	 
+	 
+</div>

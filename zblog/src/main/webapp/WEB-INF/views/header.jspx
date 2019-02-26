@@ -1,0 +1,27 @@
+<div id="header" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	version="2.0">		
+		<spring:message code="header_text" var="headerText"/>	
+		<spring:message code="label_welcome" var="labelWelcome"/>
+		<spring:url value="/login" var="login"/>
+		<spring:url value="/" var="home"/>
+		<spring:url value="/create" var="create_post"/>
+		<spring:url value="register" var="add_admin"/>
+		<spring:url value="/administrator/logout" var="logout"/>	
+		<div id="appname">
+			<h1>${headerText}</h1>					
+			</div>		
+			<div id="cru_op">
+				<sec:authorize access="isAuthenticated()">
+				 	<a href="${home}">Home</a>  |  <a href="${create_post}">New Post</a> | <a href="${add_admin}">Add Admin</a>
+				</sec:authorize>
+			</div>
+		<div id="userinfo">
+			<sec:authorize access="isAuthenticated()">
+				${labelWelcome} <sec:authentication property="principal.username"/> 
+			|<a href="${logout}">Logout</a></sec:authorize>
+				<br/>
+				</div>
+		
+</div>

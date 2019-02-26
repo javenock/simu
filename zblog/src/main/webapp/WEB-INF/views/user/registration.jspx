@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	 xmlns:c="http://java.sun.com/jsp/jstl/core"
+	 xmlns:form="http://www.springframework.org/tags/form"
+	 xmlns:spring="http://www.springframework.org/tags"
+	 version="2.0">
+	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 <jsp:output omit-xml-declaration = "true"/>
+	 
+	 <spring:message code="label_user_name" var="labelUserName"/>
+	 <spring:message code="label_user_email" var="labelUserEmail"/>
+	 <spring:message code="label_user_password" var="labelUserPassword"/>
+	 <spring:message code="label_user_registration" var="labelUserRegistration"/>
+	 		
+	 		<h1>${labelUserRegistration}</h1>
+	 		<div class="container">
+				
+   				 <form:form  modelAttribute="user" method="post" >
+      				 <form:label path="username">${labelUserName}</form:label>
+       						<form:input path="username" />
+       					  <br/><br/>
+       				 <form:label path="email">${labelUserEmail}</form:label>		
+       						<form:input path="email" />
+      						 <br/><br/>
+      				 <form:label path="password">${labelUserPassword}</form:label>       						
+       					   <form:password path="password" />
+      						 <br/><br/>
+
+       				 <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  				  </form:form>
+
+           </div>	 
+</div>

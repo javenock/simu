@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+xmlns:spring="http://www.springframework.org/tags"
+xmlns:sec="http://www.springframework.org/security/tags"
+xmlns:form="http://www.springframework.org/tags/form"
+version="2.0">
+	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 <jsp:output omit-xml-declaration = "true"/>
+	 <spring:url value="/post" var="postUrl"/>
+	 
+	 <spring:url value="/photo" var="PhotoUrl"/>
+	 <spring:url value="/post" var="postData"/>
+	
+
+		<div class="container"><!--Body content start-->
+		<c:forEach items = "${postBlog}" var = "pos">    
+  			 <h1><a href="${postUrl}/${pos.id}">${pos.title}</a></h1>
+   			<u>Date posted : ${pos.date}</u>   			 
+  			 <p><img src="${PhotoUrl}/${pos.id}" width="120"></img></p>
+  			 
+  			 
+  			 <c:choose>
+  			 <c:when test="${pos.body.length() > 200}">
+  				 <p>${pos.body.substring(0,200)} <a href="${postUrl}/${pos.id}">more..</a></p>	
+  			 </c:when>
+  			 <c:otherwise>
+  			 	<p>${pos.body}</p>
+  			 </c:otherwise>
+  			 </c:choose>
+   	<c:choose>
+    	<c:when test="${pos.comment.size()==0}">
+			Comments - <a href="${postData}/${pos.id}"><i>Be the first to comment</i></a>
+		</c:when>
+		<c:otherwise>
+		Comments - <a href="${postData}/${pos.id}"><i>${pos.comment.size()}</i></a>
+		</c:otherwise>    
+    
+    </c:choose>        
+          <hr/>    
+       </c:forEach>
+		
+           
+        
+    </div>
+    
+</div>
+
+

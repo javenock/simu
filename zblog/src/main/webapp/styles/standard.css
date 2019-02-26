@@ -1,0 +1,68 @@
+#header{
+	margin-bottom: 1em;
+	background-color:#006600;
+	
+}
+
+h1 {
+	font-size: 20px;
+	line-height: 26px;
+	color:#ff00ff;
+}
+a {color:#0080ff}
+
+#main{
+	padding:5px;
+}
+#cru_op{
+	float: centre;
+    margin: 5;
+    
+}
+#userinfo {
+    float: right;
+    margin: 5;
+    padding: 5px 5px;
+    
+}
+.tundra{
+	background-color:pink;
+}
+
+.close{
+width: 900px;
+   
+  margin-left: auto;
+  margin-right: auto; 
+  background-color:white;
+}
+
+#comm_div{
+	
+	border:5px solid #CCFFFF;
+}
+
+#appname{
+	padding-top:20px;
+}
+
+
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#one{
+	list-style: none; 
+	display: none;
+}
+.comment{
+	list-style: none; 
+}
+
+#footer_div{
+	background-color:#ff8080;
+}

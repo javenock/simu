@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	 xmlns:c="http://java.sun.com/jsp/jstl/core"
+	 xmlns:form="http://www.springframework.org/tags/form"
+	 xmlns:spring="http://www.springframework.org/tags"
+	 version="2.0">
+	 
+	 <jsp:directive.page contentType = "text/html; charset= UTF-8" />
+	 <jsp:output omit-xml-declaration = "true"/>
+	 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+	 <spring:message code="label_user_name" var="labelUserName"/>
+	 <spring:message code="label_user_password" var="labelUserPassword"/>
+	 <spring:message code="message_login_fail" var="messageLoginFail"/>	 
+	 <spring:message code="label_user_login" var="labelUserLogin"/>
+	 <spring:message code="label_login" var="labelLogin"/>
+	 <spring:url var="loginUrl" value="/j_spring_security_check" />
+	 
+	 <div class="container">
+	  <h1>${labelUserLogin}</h1>
+      	<c:if test="${error == true}">
+			<b class="error">${messageLoginFail}</b>
+		</c:if>
+      <form method="POST" action="${contextPath}/login" class="form-signin" >
+        <h2 class="form-heading">Log in</h2>
+        <div class="form-group">            
+            <input name="username" type="text" class="form-control" placeholder="${labelUserName}" /><br/><br/>
+            <input name="password" type="password" class="form-control" placeholder="${labelUserPassword}"/><br/><br/>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>           
+			<br/><br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>           
+        </div>
+
+    </form>
+
+  </div>
+<!-- /container -->
+</div>
